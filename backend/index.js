@@ -2,11 +2,13 @@ const express = require("express");
 
 const app = express();
 
-app.get('/', function(req, res){
-    res.send('hello world!')
-});
+const router = require('./routes')
+app.use('/api', router)
 
-const port = 6000;
+const port = 8000;
 app.listen(port, () => {
     console.log(`server is listening`)
 });
+
+
+
